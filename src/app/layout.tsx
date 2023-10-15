@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import ThemeRegistry from '@/app/components/ThemeRegistry/ThemeRegistry'
+import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
@@ -22,23 +22,25 @@ export default function RootLayout({
       <body>
         <ThemeRegistry>
           <AppBar position="fixed" sx={{ zIndex: 2000 }}>
-            <Toolbar sx={{ backgroundColor: 'background.paper' }}>
-              <Image
-                src="/logo.jpg"
-                width={44}
-                height={44}
-                alt="Ibn Baz Logo"
-              />
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                color="black"
-                sx={{ ml: 2 }}
-              >
-                สถาบันอิบนุบาซเพื่ออิสลามศึกษา
-              </Typography>
-            </Toolbar>
+            <a href="/" className="ibnbaz-home-link">
+              <Toolbar sx={{ backgroundColor: 'background.paper' }}>
+                <Image
+                  src="/logo-no-text.jpg"
+                  width={44}
+                  height={44}
+                  alt="Ibn Baz Logo"
+                />
+                <Typography
+                  variant="h6"
+                  noWrap
+                  component="div"
+                  color="black"
+                  sx={{ ml: 2 }}
+                >
+                  สถาบันอิบนุบาซเพื่ออิสลามศึกษา
+                </Typography>
+              </Toolbar>
+            </a>
           </AppBar>
           <Box
             component="main"

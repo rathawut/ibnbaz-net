@@ -1,7 +1,8 @@
 'use client'
 import React from 'react'
-import { TextField, InputAdornment, IconButton } from '@mui/material'
+import { TextField, InputAdornment, IconButton, Box } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
+import IbnBazSurahList from '@/components/IbnBazQuran/IbnBazSurahList/IbnBazSurahList'
 import styles from './page.module.css'
 
 const Home: React.FC = () => {
@@ -28,28 +29,33 @@ const Home: React.FC = () => {
   }, [])
 
   return (
-    <div className={styles.container}>
-      <TextField
-        fullWidth
-        variant="outlined"
-        size="medium"
-        value={searchValue}
-        onChange={handleSearchChange}
-        onKeyDown={handleKeyDown}
-        placeholder="Search..."
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton onClick={handleSearchClick}>
-                <SearchIcon />
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-        inputRef={searchInputRef} // Using the ref here
-        sx={{ width: '100%', maxWidth: '600px', mt: 3 }}
-      />
-    </div>
+    <Box>
+      <Box display="flex" justifyContent="center">
+        <TextField
+          fullWidth
+          variant="outlined"
+          size="medium"
+          value={searchValue}
+          onChange={handleSearchChange}
+          onKeyDown={handleKeyDown}
+          placeholder="Search..."
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton onClick={handleSearchClick}>
+                  <SearchIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+          inputRef={searchInputRef}
+          sx={{ width: '100%', maxWidth: '600px', mt: 3 }}
+        />
+      </Box>
+      <Box sx={{ mt: 4 }}>
+        <IbnBazSurahList />
+      </Box>
+    </Box>
   )
 }
 
