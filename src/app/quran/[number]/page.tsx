@@ -1,12 +1,16 @@
-// pages/quran/[number].tsx
-
-import { useRouter } from 'next/router'
+'use client'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Container, Typography, Box } from '@mui/material'
 
-const IbnBazSurahPage: React.FC = () => {
-  const router = useRouter()
-  const { number } = router.query // grabbing the number parameter from the URL
+type IbnBazSurahPageType = {
+  params: {
+    number: Number
+  }
+}
+
+const IbnBazSurahPage: React.FC<IbnBazSurahPageType> = ({ params }) => {
+  const { number } = params // grabbing the number parameter from the URL
   const [surah, setSurah] = useState<null | any>(null)
 
   useEffect(() => {
@@ -29,8 +33,11 @@ const IbnBazSurahPage: React.FC = () => {
   return (
     <Container>
       <Box my={4}>
-        <Typography variant="h4" gutterBottom>
-          {surah.thName} - {surah.number}
+        <Typography variant="h4" gutterBottom sx={{ 
+          display: 'flex',
+          justifyContent: 'center',
+        }}>
+          ซูเราะฮ์ที่ {`${number}`}
         </Typography>
         {/* Additional Surah details, Ayahs, etc. could be displayed here */}
       </Box>
