@@ -33,10 +33,14 @@ const IbnBazSurahPage: React.FC<IbnBazSurahPageType> = ({ params }) => {
   return (
     <Container>
       <Box my={4}>
-        <Typography variant="h4" gutterBottom sx={{ 
-          display: 'flex',
-          justifyContent: 'center',
-        }}>
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
           ซูเราะฮ์ที่ {`${number}`}
         </Typography>
         {/* Additional Surah details, Ayahs, etc. could be displayed here */}
