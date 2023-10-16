@@ -73,8 +73,8 @@ const IbnBazAyahList: React.FC = () => {
         window.history.pushState(null, '', `?${currentSearch.toString()}`)
       }
     }
-  }, [state.query])
-  
+  }, [state.previousQuery, state.query])
+
   React.useEffect(() => {
     // Load the content for the initial page based on the URL's query string
     const queryType = /[\u0600-\u06FF]/.test(state.query)
