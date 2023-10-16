@@ -21,7 +21,7 @@ Welcome to `ibnbaz-net`, a web application committed to delivering an extensive 
 ### Setup and Installation
 ```sh
 # Clone the Repository
-git clone https://github.com/your-username/ibnbaz-net.git
+git clone https://github.com/ibnbaz-institute/ibnbaz-net.git
 
 # Navigate to the Project Directory
 cd ibnbaz-net
