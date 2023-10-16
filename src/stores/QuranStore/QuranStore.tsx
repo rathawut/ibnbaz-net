@@ -11,6 +11,7 @@ import { Surah } from '@/types/surah'
 const surahList = _surahList as Surah[]
 export interface State {
   surahList: Surah[]
+  previousQuery: string
   query: string
   result: SearchResult
 }
@@ -24,6 +25,7 @@ export interface Action {
 
 const initialState: State = {
   surahList,
+  previousQuery: '',
   query: '',
   result: {
     items: [],
@@ -49,7 +51,12 @@ const reducer = (state: State, action: Action): State => {
         action.page,
         action.perPage,
       )
-      return { ...state, query: action.query, result: surahResult }
+      return {
+        ...state,
+        previousQuery: state.query,
+        query: action.query,
+        result: surahResult,
+      }
 
     case 'SEARCH_BY_ARCLEAN':
       const arCleanResult = searchByArClean(
@@ -57,7 +64,12 @@ const reducer = (state: State, action: Action): State => {
         action.page,
         action.perPage,
       )
-      return { ...state, query: action.query, result: arCleanResult }
+      return {
+        ...state,
+        previousQuery: state.query,
+        query: action.query,
+        result: arCleanResult,
+      }
 
     case 'SEARCH_BY_THDAASEE':
       const thDaaseeResult = searchByThDaasee(
@@ -65,7 +77,12 @@ const reducer = (state: State, action: Action): State => {
         action.page,
         action.perPage,
       )
-      return { ...state, query: action.query, result: thDaaseeResult }
+      return {
+        ...state,
+        previousQuery: state.query,
+        query: action.query,
+        result: thDaaseeResult,
+      }
 
     default:
       return state

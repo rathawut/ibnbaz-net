@@ -1,6 +1,12 @@
 'use client'
 import React from 'react'
-import { TextField, InputAdornment, IconButton, Box } from '@mui/material'
+import {
+  TextField,
+  InputAdornment,
+  IconButton,
+  Box,
+  Typography,
+} from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import IbnBazAyahList from '@/components/IbnBazQuran/IbnBazAyahList/IbnBazAyahList'
 import {
@@ -38,7 +44,7 @@ const HomeContent: React.FC<{
   searchInputRef: React.RefObject<HTMLInputElement>
   handleSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }> = ({ searchValue, setSearchValue, searchInputRef, handleSearchChange }) => {
-  const { dispatch } = useQuranStore()
+  const { state, dispatch } = useQuranStore()
 
   const handleSearch = React.useCallback(
     (query: string, page: number = 1) => {
@@ -69,13 +75,12 @@ const HomeContent: React.FC<{
       const params = new URLSearchParams(window.location.search)
       const query = params.get('q')
       const page = Number(params.get('page') || 1)
-
       if (query) {
         setSearchValue(query)
         handleSearch(query, page)
       }
     }
-  }, [handleSearch, setSearchValue])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Box>
@@ -102,7 +107,13 @@ const HomeContent: React.FC<{
         />
       </Box>
       <Box>
-        <IbnBazAyahList />
+        {state.query ? (
+          <IbnBazAyahList />
+        ) : (
+          <Typography variant="h5" textAlign="center">
+            กรุณาพิมพ์คำค้นหาที่ต้องการ ด้วยภาษาอาหรับหรือไทย
+          </Typography>
+        )}
       </Box>
     </Box>
   )

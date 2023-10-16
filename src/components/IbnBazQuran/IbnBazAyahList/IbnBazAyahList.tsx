@@ -65,14 +65,16 @@ const IbnBazAyahList: React.FC = () => {
   }
 
   React.useEffect(() => {
-    setCurrentPage(1)
-    if (typeof window !== 'undefined') {
-      const currentSearch = new URLSearchParams(window.location.search)
-      currentSearch.set('page', '1')
-      window.history.pushState(null, '', `?${currentSearch.toString()}`)
+    if (state.previousQuery !== state.query) {
+      setCurrentPage(1)
+      if (typeof window !== 'undefined') {
+        const currentSearch = new URLSearchParams(window.location.search)
+        currentSearch.set('page', '1')
+        window.history.pushState(null, '', `?${currentSearch.toString()}`)
+      }
     }
   }, [state.query])
-
+  
   React.useEffect(() => {
     // Load the content for the initial page based on the URL's query string
     const queryType = /[\u0600-\u06FF]/.test(state.query)
@@ -106,17 +108,9 @@ const IbnBazAyahList: React.FC = () => {
       alignItems="center"
       justifyContent="center"
     >
-      {state.query ? (
-        <Typography variant="body2" textAlign="center">
-          ค้นหาเจอทั้งหมด: {meta.totalCount} อายะฮ์ | จำนวนหน้า:{' '}
-          {meta.pageCount}
-        </Typography>
-      ) : (
-        <Typography variant="h5" textAlign="center">
-          กรุณาพิมพ์คำค้นหาที่ต้องการ ด้วยภาษาอาหรับหรือไทย
-        </Typography>
-      )}
-
+      <Typography variant="body2" textAlign="center">
+        ค้นหาเจอทั้งหมด: {meta.totalCount} อายะฮ์ | จำนวนหน้า: {meta.pageCount}
+      </Typography>
       <Table>
         <TableBody>
           {items.map((ayah: Ayah, index: number) => (
