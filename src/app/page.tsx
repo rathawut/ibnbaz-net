@@ -2,7 +2,6 @@
 import React from 'react'
 import { TextField, InputAdornment, IconButton, Box } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
-// import IbnBazSurahList from '@/components/IbnBazQuran/IbnBazSurahList/IbnBazSurahList'
 import IbnBazAyahList from '@/components/IbnBazQuran/IbnBazAyahList/IbnBazAyahList'
 import {
   useQuranStore,
@@ -17,27 +16,6 @@ const Home: React.FC = () => {
     setSearchValue(event.target.value)
   }
 
-  const handleSearchClick = (dispatch: React.Dispatch<any>) => {
-    const isArabic = /[\u0600-\u06FF]/.test(searchValue)
-
-    if (isArabic) {
-      dispatch({ type: 'SEARCH_BY_ARCLEAN', query: searchValue })
-    } else {
-      dispatch({ type: 'SEARCH_BY_THDAASEE', query: searchValue })
-    }
-
-    searchInputRef.current?.blur()
-  }
-
-  const handleKeyDown = (
-    event: React.KeyboardEvent,
-    dispatch: React.Dispatch<any>,
-  ) => {
-    if (event.key === 'Enter') {
-      handleSearchClick(dispatch)
-    }
-  }
-
   React.useEffect(() => {
     searchInputRef.current?.focus()
   }, [])
@@ -49,8 +27,6 @@ const Home: React.FC = () => {
         setSearchValue={setSearchValue}
         searchInputRef={searchInputRef}
         handleSearchChange={handleSearchChange}
-        handleSearchClick={handleSearchClick}
-        handleKeyDown={handleKeyDown}
       />
     </QuranStoreProvider>
   )
@@ -61,20 +37,43 @@ const HomeContent: React.FC<{
   setSearchValue: React.Dispatch<React.SetStateAction<string>>
   searchInputRef: React.RefObject<HTMLInputElement>
   handleSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  handleSearchClick: (dispatch: React.Dispatch<any>) => void
-  handleKeyDown: (
-    event: React.KeyboardEvent,
-    dispatch: React.Dispatch<any>,
-  ) => void
-}> = ({
-  searchValue,
-  setSearchValue,
-  searchInputRef,
-  handleSearchChange,
-  handleSearchClick,
-  handleKeyDown,
-}) => {
-  const { state, dispatch } = useQuranStore()
+}> = ({ searchValue, setSearchValue, searchInputRef, handleSearchChange }) => {
+  const { dispatch } = useQuranStore()
+
+  const handleSearch = React.useCallback(
+    (query: string, page: number = 1) => {
+      const isArabic = /[\u0600-\u06FF]/.test(query)
+      if (isArabic) {
+        dispatch({ type: 'SEARCH_BY_ARCLEAN', query, page })
+      } else {
+        dispatch({ type: 'SEARCH_BY_THDAASEE', query, page })
+      }
+    },
+    [dispatch], // dispatch is a dependency for this useCallback
+  )
+
+  const handleSearchClick = () => {
+    handleSearch(searchValue)
+    window.history.pushState(null, '', `?q=${searchValue}`)
+    searchInputRef.current?.blur()
+  }
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      handleSearchClick()
+    }
+  }
+
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const query = params.get('q')
+    const page = Number(params.get('page') || 1) // Extract page value
+
+    if (query) {
+      setSearchValue(query)
+      handleSearch(query, page) // Pass page value to handleSearch
+    }
+  }, [handleSearch, setSearchValue])
 
   return (
     <Box>
@@ -85,12 +84,12 @@ const HomeContent: React.FC<{
           size="medium"
           value={searchValue}
           onChange={handleSearchChange}
-          onKeyDown={(event) => handleKeyDown(event, dispatch)}
+          onKeyDown={handleKeyDown}
           placeholder="ค้นหาจากอัลกุรอาน..."
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton onClick={() => handleSearchClick(dispatch)}>
+                <IconButton onClick={handleSearchClick}>
                   <SearchIcon />
                 </IconButton>
               </InputAdornment>
