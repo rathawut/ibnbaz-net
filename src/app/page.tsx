@@ -54,7 +54,7 @@ const HomeContent: React.FC<{
 
   const handleSearchClick = () => {
     handleSearch(searchValue)
-    window.history.pushState(null, '', `?q=${searchValue}`)
+    window?.history.pushState(null, '', `?q=${searchValue}`)
     searchInputRef.current?.blur()
   }
 

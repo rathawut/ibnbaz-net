@@ -46,9 +46,9 @@ const IbnBazAyahList: React.FC = () => {
     setCurrentPage(value)
 
     // Update the URL's query string with the new page number
-    const currentSearch = new URLSearchParams(window.location.search)
+    const currentSearch = new URLSearchParams(window?.location.search)
     currentSearch.set('page', String(value))
-    window.history.pushState(null, '', `?${currentSearch.toString()}`)
+    window?.history.pushState(null, '', `?${currentSearch.toString()}`)
 
     // Dispatch the new page query
     const queryType = /[\u0600-\u06FF]/.test(state.query)
