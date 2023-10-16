@@ -64,7 +64,14 @@ const IbnBazAyahList: React.FC = () => {
     })
   }
 
+  const isFirstRender = React.useRef(true)
+
   React.useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+
     if (state.previousQuery !== state.query) {
       setCurrentPage(1)
       if (typeof window !== 'undefined') {
