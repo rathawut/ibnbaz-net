@@ -34,8 +34,11 @@ const highlightText = (text: string, highlight: string) => {
 const IbnBazAyahList: React.FC = () => {
   const { state, dispatch } = useQuranStore()
   const [currentPage, setCurrentPage] = React.useState<number>(() => {
+    if (typeof window === 'undefined') {
+      return 1
+    }
     // Extract the page number from URL parameters when the component mounts
-    const params = new URLSearchParams(window?.location.search)
+    const params = new URLSearchParams(window.location.search)
     return Number(params.get('page') || 1)
   })
 
@@ -46,9 +49,9 @@ const IbnBazAyahList: React.FC = () => {
     setCurrentPage(value)
 
     // Update the URL's query string with the new page number
-    const currentSearch = new URLSearchParams(window?.location.search)
+    const currentSearch = new URLSearchParams(window.location.search)
     currentSearch.set('page', String(value))
-    window?.history.pushState(null, '', `?${currentSearch.toString()}`)
+    window.history.pushState(null, '', `?${currentSearch.toString()}`)
 
     // Dispatch the new page query
     const queryType = /[\u0600-\u06FF]/.test(state.query)
@@ -63,9 +66,11 @@ const IbnBazAyahList: React.FC = () => {
 
   React.useEffect(() => {
     setCurrentPage(1)
-    const currentSearch = new URLSearchParams(window?.location.search)
-    currentSearch.set('page', '1')
-    window?.history.pushState(null, '', `?${currentSearch.toString()}`)
+    if (typeof window !== 'undefined') {
+      const currentSearch = new URLSearchParams(window.location.search)
+      currentSearch.set('page', '1')
+      window.history.pushState(null, '', `?${currentSearch.toString()}`)
+    }
   }, [state.query])
 
   React.useEffect(() => {
