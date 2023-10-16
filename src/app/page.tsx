@@ -25,6 +25,8 @@ const Home: React.FC = () => {
     } else {
       dispatch({ type: 'SEARCH_BY_THDAASEE', query: searchValue })
     }
+
+    searchInputRef.current?.blur()
   }
 
   const handleKeyDown = (
@@ -95,10 +97,10 @@ const HomeContent: React.FC<{
             ),
           }}
           inputRef={searchInputRef}
-          sx={{ width: '100%', maxWidth: '600px', mt: 3 }}
+          sx={{ width: '100%', maxWidth: '600px' }}
         />
       </Box>
-      <Box sx={{ mt: 4 }}>
+      <Box>
         <IbnBazAyahList />
       </Box>
     </Box>

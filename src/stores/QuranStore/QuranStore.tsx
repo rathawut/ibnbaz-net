@@ -42,7 +42,6 @@ const StoreContext = createContext<{
 }>({ state: initialState, dispatch: () => undefined })
 
 const reducer = (state: State, action: Action): State => {
-  console.log({ state, action })
   switch (action.type) {
     case 'SEARCH_BY_SURAH':
       const surahResult = searchBySurah(

@@ -7,7 +7,9 @@ import {
   TableBody,
   TableRow,
   TableCell,
+  IconButton,
 } from '@mui/material'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import { useQuranStore } from '@/stores/QuranStore/QuranStore'
 import type { Ayah } from '@/types/ayah'
 import type { Surah } from '@/types/surah'
@@ -54,13 +56,16 @@ const IbnBazAyahList: React.FC = () => {
   }
 
   const { items, meta } = state.result
-  const pageCount = Math.ceil(meta.totalCount / ITEMS_PER_PAGE)
 
   const getSurahName = (surahNumber: number): string => {
     const foundSurah = state.surahList.find(
       (s: Surah) => s.number === surahNumber,
     )
     return foundSurah ? foundSurah.thName : ''
+  }
+
+  const handleCopyText = async (text: string) => {
+    await navigator.clipboard.writeText(text)
   }
 
   return (
@@ -72,16 +77,12 @@ const IbnBazAyahList: React.FC = () => {
       justifyContent="center"
     >
       {state.query ? (
-        <>
-          <Typography variant="h4" mb={2} textAlign="center">
-            อัลกุรอานพร้อมคำแปลภาษาไทย เครดิตจาก Daasee.com
-          </Typography>
-          <Typography variant="body2" mb={3} textAlign="center">
-            ค้นหาเจอทั้งหมด {meta.totalCount} | จำนวนหน้า: {pageCount}
-          </Typography>
-        </>
+        <Typography variant="body2" textAlign="center">
+          ค้นหาเจอทั้งหมด: {meta.totalCount} อายะฮ์ | จำนวนหน้า:{' '}
+          {meta.pageCount}
+        </Typography>
       ) : (
-        <Typography variant="h5" mb={3} textAlign="center">
+        <Typography variant="h5" textAlign="center">
           กรุณาพิมพ์คำค้นหาที่ต้องการ ด้วยภาษาอาหรับหรือไทย
         </Typography>
       )}
@@ -91,14 +92,27 @@ const IbnBazAyahList: React.FC = () => {
           {items.map((ayah: Ayah, index: number) => (
             <TableRow key={index}>
               <TableCell align="center">
-                <Typography variant="h6">
-                  {getSurahName(ayah.surah)} อายะฮ์ที่ {ayah.ayah}
-                </Typography>
                 <Typography variant="body1">
                   {highlightText(ayah.ar, state.query)}
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body1">
                   {highlightText(ayah.thDaasee, state.query)}
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  ({getSurahName(ayah.surah)} อายะฮ์ที่ {ayah.ayah}){' '}
+                  <IconButton
+                    onClick={() =>
+                      handleCopyText(
+                        `${ayah.ar}\n${ayah.thDaasee}\n(${getSurahName(
+                          ayah.surah,
+                        )} อายะฮ์ที่ ${ayah.ayah})`,
+                      )
+                    }
+                    size="small"
+                    aria-label="copy"
+                  >
+                    <ContentCopyIcon fontSize="small" />
+                  </IconButton>
                 </Typography>
               </TableCell>
             </TableRow>
@@ -107,11 +121,15 @@ const IbnBazAyahList: React.FC = () => {
       </Table>
 
       <Pagination
-        count={pageCount}
+        count={meta.pageCount}
         page={currentPage}
         onChange={handlePageChange}
         sx={{ mt: 3 }}
       />
+
+      <Typography variant="h5" mb={2} textAlign="center" sx={{ mt: 3 }}>
+        อัลกุรอานพร้อมคำแปลภาษาไทย เครดิตจาก Daasee.com
+      </Typography>
     </Box>
   )
 }
