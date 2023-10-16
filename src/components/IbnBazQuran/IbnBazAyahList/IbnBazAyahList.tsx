@@ -35,7 +35,7 @@ const IbnBazAyahList: React.FC = () => {
   const { state, dispatch } = useQuranStore()
   const [currentPage, setCurrentPage] = React.useState<number>(() => {
     // Extract the page number from URL parameters when the component mounts
-    const params = new URLSearchParams(window.location.search)
+    const params = new URLSearchParams(window?.location.search)
     return Number(params.get('page') || 1)
   })
 
@@ -63,9 +63,9 @@ const IbnBazAyahList: React.FC = () => {
 
   React.useEffect(() => {
     setCurrentPage(1)
-    const currentSearch = new URLSearchParams(window.location.search)
+    const currentSearch = new URLSearchParams(window?.location.search)
     currentSearch.set('page', '1')
-    window.history.pushState(null, '', `?${currentSearch.toString()}`)
+    window?.history.pushState(null, '', `?${currentSearch.toString()}`)
   }, [state.query])
 
   React.useEffect(() => {
