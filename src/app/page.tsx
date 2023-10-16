@@ -65,13 +65,15 @@ const HomeContent: React.FC<{
   }
 
   React.useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    const query = params.get('q')
-    const page = Number(params.get('page') || 1) // Extract page value
+    if (window) {
+      const params = new URLSearchParams(window.location.search)
+      const query = params.get('q')
+      const page = Number(params.get('page') || 1) // Extract page value
 
-    if (query) {
-      setSearchValue(query)
-      handleSearch(query, page) // Pass page value to handleSearch
+      if (query) {
+        setSearchValue(query)
+        handleSearch(query, page) // Pass page value to handleSearch
+      }
     }
   }, [handleSearch, setSearchValue])
 
