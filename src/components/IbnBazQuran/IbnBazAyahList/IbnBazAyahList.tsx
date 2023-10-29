@@ -103,8 +103,18 @@ const IbnBazAyahList: React.FC = () => {
     return foundSurah ? foundSurah.thName : ''
   }
 
+  const getDisplaySurahAndAyah = (ayah: Ayah) => {
+    return `[ซูเราะฮ์${getSurahName(ayah.surah)} (${ayah.surah}) อายะฮ์ที่ ${
+      ayah.ayah
+    }]`
+  }
+
   const handleCopyText = async (text: string) => {
     await navigator.clipboard.writeText(text)
+  }
+
+  const getCopyText = (ayah: Ayah) => {
+    return `${ayah.ar}\n${ayah.thDaasee} ${getDisplaySurahAndAyah(ayah)}`
   }
 
   return (
@@ -128,15 +138,9 @@ const IbnBazAyahList: React.FC = () => {
                   {highlightText(ayah.thDaasee, state.query)}
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
-                  ({getSurahName(ayah.surah)} อายะฮ์ที่ {ayah.ayah}){' '}
+                  {getDisplaySurahAndAyah(ayah)}
                   <IconButton
-                    onClick={() =>
-                      handleCopyText(
-                        `${ayah.ar}\n${ayah.thDaasee}\n(${getSurahName(
-                          ayah.surah,
-                        )} อายะฮ์ที่ ${ayah.ayah})`,
-                      )
-                    }
+                    onClick={() => handleCopyText(getCopyText(ayah))}
                     size="small"
                     aria-label="copy"
                   >
