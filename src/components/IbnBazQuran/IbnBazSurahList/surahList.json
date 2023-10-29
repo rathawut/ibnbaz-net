@@ -1,458 +1,572 @@
 [
   {
     "number": 1,
+    "arName": "الْفَاتِحَة",
     "thName": "อัลฟาติหะฮฺ"
   },
   {
     "number": 2,
+    "arName": "الْبَقَرَة",
     "thName": "อัลบะก็อเราะฮฺ"
   },
   {
     "number": 3,
+    "arName": "آلِ عِمْرَان",
     "thName": "อาลิอิมรอน"
   },
   {
     "number": 4,
+    "arName": "النِّسَاء",
     "thName": "อันนิสาอ์"
   },
   {
     "number": 5,
+    "arName": "الْمَائِدَة",
     "thName": "อัลมาอิดะฮฺ"
   },
   {
     "number": 6,
+    "arName": "الْأَنْعَام",
     "thName": "อัลอันอาม"
   },
   {
     "number": 7,
+    "arName": "الْأَعْرَاف",
     "thName": "อัลอะอฺรอฟ"
   },
   {
     "number": 8,
+    "arName": "الْأَنفَال",
     "thName": "อัลอันฟาล"
   },
   {
     "number": 9,
+    "arName": "التَّوْبَة",
     "thName": "อัตเตาบะฮฺ"
   },
   {
     "number": 10,
+    "arName": "يُونُس",
     "thName": "ยูนุส"
   },
   {
     "number": 11,
+    "arName": "هُود",
     "thName": "ฮูด"
   },
   {
     "number": 12,
+    "arName": "يُوسُف",
     "thName": "ยูสุฟ"
   },
   {
     "number": 13,
+    "arName": "الرَّعْد",
     "thName": "อัรเราะอฺดุ"
   },
   {
     "number": 14,
+    "arName": "إِبْرَاهِيم",
     "thName": "อิบรอฮีม"
   },
   {
     "number": 15,
+    "arName": "الْحِجْر",
     "thName": "อัลหิจญ์รุ"
   },
   {
     "number": 16,
+    "arName": "النَّحْل",
     "thName": "อันนะหฺลิ"
   },
   {
     "number": 17,
+    "arName": "الْإِسْرَاء",
     "thName": "อัลอิสรออ์"
   },
   {
     "number": 18,
+    "arName": "الْكَهْف",
     "thName": "อัลกะฮฺฟิ"
   },
   {
     "number": 19,
+    "arName": "مَرْيَم",
     "thName": "มัรยัม"
   },
   {
     "number": 20,
+    "arName": "طه",
     "thName": "ฏอฮา"
   },
   {
     "number": 21,
+    "arName": "الْأَنبِيَاء",
     "thName": "อัลอันบิยาอ์"
   },
   {
     "number": 22,
+    "arName": "الْحَجّ",
     "thName": "อัลหัจญ์"
   },
   {
     "number": 23,
+    "arName": "المُؤْمِنُون",
     "thName": "อัลมุอ์มินูน"
   },
   {
     "number": 24,
+    "arName": "النُّور",
     "thName": "อันนูร"
   },
   {
     "number": 25,
+    "arName": "الْفُرْقَان",
     "thName": "อัลฟุรกอน"
   },
   {
     "number": 26,
+    "arName": "الشُّعَرَاء",
     "thName": "อัชชุอะรออ์"
   },
   {
     "number": 27,
+    "arName": "النَّمْل",
     "thName": "อันนัมลฺ"
   },
   {
     "number": 28,
+    "arName": "الْقَصَص",
     "thName": "อัลก็อศ็อศ"
   },
   {
     "number": 29,
+    "arName": "الْعَنكَبُوت",
     "thName": "อัลอันกะบูต"
   },
   {
     "number": 30,
+    "arName": "الرُّوم",
     "thName": "อัรรูม"
   },
   {
     "number": 31,
+    "arName": "لُقْمَان",
     "thName": "ลุกมาน"
   },
   {
     "number": 32,
+    "arName": "السَّجْدَة",
     "thName": "อัสสัจญ์ดะฮฺ"
   },
   {
     "number": 33,
+    "arName": "الْأَحْزَاب",
     "thName": "อัลอะหฺซาบ"
   },
   {
     "number": 34,
+    "arName": "سَبَأ",
     "thName": "สะบะอ์"
   },
   {
     "number": 35,
+    "arName": "فَاطِر",
     "thName": "ฟาฏิร"
   },
   {
     "number": 36,
+    "arName": "يس",
     "thName": "ยาซีน"
   },
   {
     "number": 37,
+    "arName": "الصَّافَّات",
     "thName": "อัศศอฟฟาต"
   },
   {
     "number": 38,
+    "arName": "ص",
     "thName": "ศอด"
   },
   {
     "number": 39,
+    "arName": "الزُّمَر",
     "thName": "อัซซุมัร"
   },
   {
     "number": 40,
+    "arName": "غَافِر",
     "thName": "ฆอฟิร"
   },
   {
     "number": 41,
+    "arName": "فُصِّلَت",
     "thName": "ฟุศศิลัต"
   },
   {
     "number": 42,
+    "arName": "الشُّورَى",
     "thName": "อัชชูรอ"
   },
   {
     "number": 43,
+    "arName": "الزُّخْرُف",
     "thName": "อัซซุครุฟ"
   },
   {
     "number": 44,
+    "arName": "الدُّخَان",
     "thName": "อัดดุคอน"
   },
   {
     "number": 45,
+    "arName": "الجَاثِيَة",
     "thName": "อัลญาษิยะฮฺ"
   },
   {
     "number": 46,
+    "arName": "الأحقاف",
     "thName": "อัลอะหฺกอฟ"
   },
   {
     "number": 47,
+    "arName": "محمد",
     "thName": "มุหัมมัด"
   },
   {
     "number": 48,
+    "arName": "الفتح",
     "thName": "อัลฟัตหฺ"
   },
   {
     "number": 49,
+    "arName": "الحجرات",
     "thName": "อัลหุญุรอต"
   },
   {
     "number": 50,
+    "arName": "ق",
     "thName": "กอฟ"
   },
   {
     "number": 51,
+    "arName": "الذاريات",
     "thName": "อัซซาริยาต"
   },
   {
     "number": 52,
+    "arName": "الطور",
     "thName": "อัฏฏูรฺ"
   },
   {
     "number": 53,
+    "arName": "النجم",
     "thName": "อันนัจญ์มฺ"
   },
   {
     "number": 54,
+    "arName": "القمر",
     "thName": "อัลก็อมัร"
   },
   {
     "number": 55,
+    "arName": "الرحمن",
     "thName": "อัรเราะหฺมาน"
   },
   {
     "number": 56,
+    "arName": "الواقعة",
     "thName": "อัลวากิอะฮฺ"
   },
   {
     "number": 57,
+    "arName": "الحديد",
     "thName": "อัลหะดีด"
   },
   {
     "number": 58,
+    "arName": "المجادلة",
     "thName": "อัลมุญาดิละฮฺ"
   },
   {
     "number": 59,
+    "arName": "الحشر",
     "thName": "อัลหัชรฺ"
   },
   {
     "number": 60,
+    "arName": "الممتحنة",
     "thName": "อัลมุมตะหะนะฮฺ"
   },
   {
     "number": 61,
+    "arName": "الصف",
     "thName": "อัศศ็อฟ"
   },
   {
     "number": 62,
+    "arName": "الجمعة",
     "thName": "อัลญุมุอะฮฺ"
   },
   {
     "number": 63,
+    "arName": "المنافقون",
     "thName": "ชูเราะฮฺอัลมุนาฟิกูน"
   },
   {
     "number": 64,
+    "arName": "التغابن",
     "thName": "อัตตะฆอบุน"
   },
   {
     "number": 65,
+    "arName": "الطلاق",
     "thName": "อัฎฏ็อลาก"
   },
   {
     "number": 66,
+    "arName": "التحريم",
     "thName": "อัตตะหฺรีม"
   },
   {
     "number": 67,
+    "arName": "الملك",
     "thName": "อัลมุลกฺ"
   },
   {
     "number": 68,
+    "arName": "القلم",
     "thName": "อัลก็อลัม"
   },
   {
     "number": 69,
+    "arName": "الحاقة",
     "thName": "อัลหากเกาะฮฺ"
   },
   {
     "number": 70,
+    "arName": "المعارج",
     "thName": "อัลมะอาริจญ์"
   },
   {
     "number": 71,
+    "arName": "نوح",
     "thName": "นูหฺ"
   },
   {
     "number": 72,
+    "arName": "الجن",
     "thName": "อัลญิน"
   },
   {
     "number": 73,
+    "arName": "المزمل",
     "thName": "อัลมุซซัมมิล"
   },
   {
     "number": 74,
+    "arName": "المدثر",
     "thName": "อัลมุดดัษษิร"
   },
   {
     "number": 75,
+    "arName": "القيامة",
     "thName": "อัลกิยามะฮฺ"
   },
   {
     "number": 76,
+    "arName": "الإنسان",
     "thName": "อัลอินซาน"
   },
   {
     "number": 77,
+    "arName": "المرسلات",
     "thName": "อัลมุรสะลาต"
   },
   {
     "number": 78,
+    "arName": "النبأ",
     "thName": "อันนะบะอ์"
   },
   {
     "number": 79,
+    "arName": "النازعات",
     "thName": "อันนาซิอาต"
   },
   {
     "number": 80,
+    "arName": "عبس",
     "thName": "อะบะสะ"
   },
   {
     "number": 81,
+    "arName": "التكوير",
     "thName": "อัตตักวีร"
   },
   {
     "number": 82,
+    "arName": "الإنفطار",
     "thName": "อัลอินฟิฏอร"
   },
   {
     "number": 83,
+    "arName": "المطففين",
     "thName": "อัลมุฏ็อฟฟิฟีน"
   },
   {
     "number": 84,
+    "arName": "الإنشقاق",
     "thName": "อัลอินชิกอก"
   },
   {
     "number": 85,
+    "arName": "البروج",
     "thName": "อัลบุรูจญ์"
   },
   {
     "number": 86,
+    "arName": "الطارق",
     "thName": "อัฏฏอริก"
   },
   {
     "number": 87,
+    "arName": "الأعلى",
     "thName": "อัลอะอฺลา"
   },
   {
     "number": 88,
+    "arName": "الغاشية",
     "thName": "อัลฆอชิยะฮฺ"
   },
   {
     "number": 89,
+    "arName": "الفجر",
     "thName": "อัลฟัจญ์รฺ"
   },
   {
     "number": 90,
+    "arName": "البلد",
     "thName": "อัลบะลัด"
   },
   {
     "number": 91,
+    "arName": "الشمس",
     "thName": "อัชชัมสฺ"
   },
   {
     "number": 92,
+    "arName": "الليل",
     "thName": "อัลลัยลฺ"
   },
   {
     "number": 93,
+    "arName": "الضحى",
     "thName": "อัฎฎุหา"
   },
   {
     "number": 94,
+    "arName": "الشرح",
     "thName": "อัชชัรหฺ"
   },
   {
     "number": 95,
+    "arName": "التين",
     "thName": "อัตตีน"
   },
   {
     "number": 96,
+    "arName": "العلق",
     "thName": "อัลอะลัก"
   },
   {
     "number": 97,
+    "arName": "القدر",
     "thName": "อัลก็อดรฺ"
   },
   {
     "number": 98,
+    "arName": "البينة",
     "thName": "อัลบัยยินะฮฺ"
   },
   {
     "number": 99,
+    "arName": "الزلزلة",
     "thName": "อัซซัลซะละฮฺ"
   },
   {
     "number": 100,
+    "arName": "العاديات",
     "thName": "อัลอาดิยาต"
   },
   {
     "number": 101,
+    "arName": "القارعة",
     "thName": "อัลกอริอะฮฺ"
   },
   {
     "number": 102,
+    "arName": "التكاثر",
     "thName": "อัตตะกาษุร"
   },
   {
     "number": 103,
+    "arName": "العصر",
     "thName": "อัลอัศรฺ"
   },
   {
     "number": 104,
+    "arName": "الهمزة",
     "thName": "อัลฮุมะซะฮฺ"
   },
   {
     "number": 105,
+    "arName": "الفيل",
     "thName": "อัลฟีล"
   },
   {
     "number": 106,
+    "arName": "قريش",
     "thName": "กุรอยชฺ"
   },
   {
     "number": 107,
+    "arName": "الماعون",
     "thName": "อัลมาอูน"
   },
   {
     "number": 108,
+    "arName": "الكوثر",
     "thName": "อัลเกาษัร"
   },
   {
     "number": 109,
+    "arName": "الكافرون",
     "thName": "อัลกาฟิรูน"
   },
   {
     "number": 110,
+    "arName": "النصر",
     "thName": "อัลนัศรฺ"
   },
   {
     "number": 111,
+    "arName": "المسد",
     "thName": "อัลมะสัด"
   },
   {
     "number": 112,
+    "arName": "الإخلاص",
     "thName": "อัลอิคลาศ"
   },
   {
     "number": 113,
+    "arName": "الفلق",
     "thName": "อัลฟะลัก"
   },
   {
     "number": 114,
+    "arName": "الناس",
     "thName": "อันนาส"
   }
 ]

@@ -1,16 +1,18 @@
 'use client'
 import React from 'react'
-import { useRouter } from 'next/navigation'
 import { Grid, Typography, Container, Box } from '@mui/material'
-import surahList from './surahList.json'
+import _surahList from './surahList.json'
+import { useQuranStore } from '@/stores/QuranStore/QuranStore'
+import { Surah } from '@/types/surah'
 
-interface Surah {
-  number: number
-  thName: string
-}
+const surahList = _surahList as Surah[]
 
 export const IbnBazSurahList: React.FC = () => {
-  const router = useRouter()
+  const { dispatch } = useQuranStore()
+
+  const handleSurahClick = (number: number) => {
+    dispatch({ type: 'SEARCH_BY_SURAH', query: number.toString() })
+  }
 
   return (
     <Container>
@@ -36,10 +38,13 @@ export const IbnBazSurahList: React.FC = () => {
                   boxShadow: '0px 8px 8px rgba(0, 0, 0, 0.25)',
                 },
               }}
-              onClick={() => router.push(`/quran/${surah.number}`)}
+              onClick={() => handleSurahClick(surah.number)}
             >
-              <Typography variant="body1" noWrap>
-                {surah.number}. {surah.thName}
+              <Typography variant="body1" align="center">
+                <div>
+                  {surah.number}. {surah.thName}
+                </div>
+                <div>{surah.arName}</div>
               </Typography>
             </Box>
           </Grid>
